@@ -175,8 +175,14 @@
 			<p><?php echo $row["descricao"] ?></p>
 		</div>
 		<hr class="separador col-xs-11">
-		 <?php
-		}
+		<?php }
+		if ($row['otherinfo'] != '') { ?>
+		<h3><u>Outras_informações</u></h3>
+		<div class="descricao col-xs-11" style="background-color: #5f6d7a; padding: 20px 20px 20px 20px;margin-bottom: 10px;border: 1px dashed black">
+			<p><?php echo $row["otherinfo"] ?></p>
+		</div>
+		<hr class="separador col-xs-11">
+		<?php }
 			  $count = 0;
 			  $img_array = array();
 			  for ($i = 1; $i<=4; $i++) {
@@ -277,13 +283,5 @@
 					}
 				});
 		</script>
-		<?php 	
-// 		$per = mysql_fetch_array(mysql_query("SELECT views, data FROM Perguntas WHERE id='{$id}'"));
-// 		$num_views = $per["views"]+1;
-// 		$data = $per["data"];
-// 		if (!mysql_query("UPDATE Perguntas SET views='{$num_views}', data='{$data}' WHERE id='{$id}'")) {
-// 			echo "choriço";
-// 		}
-		?>
 	</body>
 </html>
